@@ -26,9 +26,23 @@ void BooK::setBorrowerId(const string& id){this-> borrowerId = id;}
 
 //checkout
 void Book::checkOut(const string& borrowerId){
-    
+    this.setAvailability(false);
+    this.setBorrowerId(borrowerId);
 }
 //return book
+void Book::returnBook(){
+    this.setAvailability(true);
+    this.setBorrowerId(null)
+}
 //toString
+string toString() {
+    
+}
 //to file format
+string toFileFormat(){
+
+}
 //fromFile Format
+void fromFileFormat(const string& line){
+    hi;
+}
