@@ -5,6 +5,9 @@
 
 using namespace std;
 
+//Default constructor
+
+
 //Constructor 
 Book::Book(const string& title, const string& author, const string& isbn)
     : title(title), author(author), isbn(isbn) {}
@@ -32,7 +35,7 @@ void Book::checkOut(const string& borrowerId){
 //return book
 void Book::returnBook(){
     this->setAvailability(true);
-    this->setBorrowerId(nullptr);
+    this->setBorrowerId("");
 }
 
 //toString
@@ -50,10 +53,18 @@ string Book::toString() const {
     return result;
 }
 //to file format
-string toFileFormat(){
-
+string Book::toFileFormat() const{
+    string result = title + "|" + author + '|' + isbn + "|";
+    return result;
 }
 //fromFile Format
-void fromFileFormat(const string& line){
-    hi;
+void Book::fromFileFormat(const string& line){
+    stringstream ss(line);
+    string token;
+
+    getline(ss,title,'|');
+    getline(ss,author,'|');
+    getline(ss,isbn,'|');
+
+    
 }
