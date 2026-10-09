@@ -58,7 +58,7 @@ string Book::toFileFormat() const{
     if(isAvailable){
         result += "1" ;
     }else{
-        result +=  "0|" + borrowerId;
+        result +=  "0|" + borrowerId + "|";
     }
     return result;
 }
@@ -71,5 +71,9 @@ void Book::fromFileFormat(const string& line){
     getline(ss,author,'|');
     getline(ss,isbn,'|');
 
+    getline(ss, token, '|');
+    isAvailable = (token == "1");
+
+    getline(ss, borrowerId, '|');
     
 }
