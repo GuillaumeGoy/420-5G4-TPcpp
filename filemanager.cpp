@@ -112,12 +112,19 @@ bool FileManager::fileExists(const string& filename) {
 
 // Create backup
 void FileManager::createBackup() {
-    if (fileExists(booksFileName)) {
+    if (!fileExists(booksFileName)) {
+        filesystem::copy_file(booksFileName, booksFileName + ".backup");
+    }else{
+        filesystem::remove(booksFileName + ".backup");
         filesystem::copy_file(booksFileName, booksFileName + ".backup");
     }
     
-    if (fileExists(usersFileName)) {
+    if (!fileExists(usersFileName)) {
         filesystem::copy_file(usersFileName, usersFileName + ".backup");
+    }else{
+        filesystem::remove(usersFileName + ".backup");
+         filesystem::copy_file(usersFileName, usersFileName + ".backup");
+
     }
     
     cout << "Fichiers de sauvegarde créés.\n";
