@@ -77,8 +77,8 @@ int main(int argc, char* argv[]) {
             return 1;
         }
     }else{
-        booksFile = (filesystem::path(dataDir) / "data"/"books.txt").string();
-        usersFile = (filesystem::path(dataDir) /"data"/ "users.txt").string();
+        booksFile = (filesystem::path(dataDir) /".."/ "data"/"books.txt").string();
+        usersFile = (filesystem::path(dataDir) /".." /"data"/ "users.txt").string();
         }
     
 
