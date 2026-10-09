@@ -56,9 +56,9 @@ string Book::toString() const {
 string Book::toFileFormat() const{
     string result = title + "|" + author + '|' + isbn + "|";
     if(isAvailable){
-        result += 1 ;
+        result += "1" ;
     }else{
-        result +=  0 + "|" + borrowerId;
+        result +=  "0|" + borrowerId;
     }
     return result;
 }
