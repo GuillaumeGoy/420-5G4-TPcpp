@@ -6,6 +6,7 @@
 
 #include "book.h"
 #include "user.h"
+#include "filemanager.h"
 
 using namespace std;
 

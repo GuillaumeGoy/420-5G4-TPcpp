@@ -6,7 +6,7 @@
 using namespace std;
 
 //Default constructor
-
+Book::Book() : title(""), author(""), isbn(""), isAvailable(true), borrowerId(""){}
 
 //Constructor 
 Book::Book(const string& title, const string& author, const string& isbn)
@@ -55,6 +55,11 @@ string Book::toString() const {
 //to file format
 string Book::toFileFormat() const{
     string result = title + "|" + author + '|' + isbn + "|";
+    if(isAvailable){
+        result += 1 ;
+    }else{
+        result +=  0 + "|" + borrowerId;
+    }
     return result;
 }
 //fromFile Format
