@@ -76,9 +76,11 @@ int main(int argc, char* argv[]) {
             printUsage(argv[0]);
             return 1;
         }
-        booksFile = (filesystem::path(dataDir) / "books.txt").string();
-        usersFile = (filesystem::path(dataDir) / "users.txt").string();
-    }
+    }else{
+        booksFile = (filesystem::path(dataDir) / "data"/"books.txt").string();
+        usersFile = (filesystem::path(dataDir) /"data"/ "users.txt").string();
+        }
+    
 
     Library library;
     FileManager fileManager(booksFile, usersFile);

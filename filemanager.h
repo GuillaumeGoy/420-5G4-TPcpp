@@ -5,12 +5,15 @@
 
 #include "library.h"
 
+class Library;
+
 using namespace std;
 
 class FileManager {
 private:
     string booksFileName;
     string usersFileName;
+    
 
 public:
     // Constructor

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <filesystem>
 #include "filemanager.h"
+#include "library.h"
 
 using namespace std;
 
