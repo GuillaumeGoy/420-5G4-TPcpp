@@ -56,6 +56,19 @@ bool FileManager::saveUsersToFile(Library& library) {
     return true;
 }
 
+void FileManager::saveJournalToFile(const string fileJour,const string mess) {
+    ofstream file(fileJour, ios::app);
+    if (!file.is_open()) {
+        cout << "Erreur : Impossible d'ouvrir " << fileJour << " en écriture.\n";
+        return;
+    }
+    
+    file << mess;
+    
+    file.close();
+    
+}
+
 // Load books from file
 bool FileManager::loadBooksFromFile(Library& library) {
     ifstream file(booksFileName);
