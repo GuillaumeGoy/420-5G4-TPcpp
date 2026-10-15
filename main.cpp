@@ -113,9 +113,14 @@ int main(int argc, char* argv[]) {
                 if (library.findBookByISBN(isbn)) {
                     cout << "Erreur : Un livre avec l'ISBN " << isbn << " existe déjà.\n";
                 } else {
-                    Book newBook(title, author, isbn);
-                    library.addBook(newBook);
-                    cout << "Livre ajouté avec succès !\n";
+                    if(library.findBookByAuthorName(title,author)){
+                        cout << "Erreur : Un livre avec le même titre et auteur existe.\n"; 
+                    }else{
+                        Book newBook(title, author, isbn);
+                        library.addBook(newBook);
+                        cout << "Livre ajouté avec succès !\n";
+                    }
+                    
                 }
                 pauseForInput();
                 break;

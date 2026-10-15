@@ -37,6 +37,26 @@ Book* Library::findBookByISBN(const string& isbn) {
     return (it != books.end()) ? it->get() : nullptr;
 }
 
+Book* Library::findBookByAuthorName(const string& title, const string& author){
+     auto authorCheck = find_if(books.begin(), books.end(),
+        [&author](const unique_ptr<Book>& book) {
+            return book->getAuthor() == author;
+        });
+
+        if(authorCheck != books.end() ? authorCheck->get(): nullptr){
+            auto it = find_if(books.begin(), books.end(),
+            [&title](const unique_ptr<Book>& book) {
+            return book->getAuthor() == title;
+            });
+               
+            return (it!= books.end()) ? it->get() : nullptr;
+        }else{
+            return nullptr;
+        }
+    
+   
+}
+
 // Search books by title (case-insensitive partial match)
 vector<Book*> Library::searchBooksByTitle(const string& title) {
     vector<Book*> results;

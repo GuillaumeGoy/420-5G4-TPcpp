@@ -39,5 +39,3 @@ Maximes|La Rochefoucauld|9782070380987|1
 Pensées|Blaise Pascal|9782070380994|1
 Lettres persanes|Montesquieu|9782070381001|1
 De l'esprit des lois|Montesquieu|9782070381018|1
-jean|jean|jean|1
-jean|jean|jean2|1
