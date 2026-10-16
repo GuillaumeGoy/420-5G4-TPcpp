@@ -172,6 +172,12 @@ void Library::displayAllBooks() {
         cout << "Aucun livre dans la bibliothèque.\n";
         return;
     }
+
+   
+    std::sort(books.begin(), books.end(), [](const std::unique_ptr<Book>& a, const std::unique_ptr<Book>& b) {
+        return std::forward_as_tuple(a->getTitle(), a->getAuthor()) < 
+               std::forward_as_tuple(b->getTitle(), b->getAuthor());
+    });
     
     cout << "\n=== TOUS LES LIVRES ===\n";
     for (size_t i = 0; i < books.size(); ++i) {
@@ -181,6 +187,8 @@ void Library::displayAllBooks() {
     }
 }
 
+
+
 // Display available books
 void Library::displayAvailableBooks() {
     auto available = getAvailableBooks();
@@ -189,6 +197,12 @@ void Library::displayAvailableBooks() {
         cout << "Aucun livre disponible pour emprunt.\n";
         return;
     }
+
+    std::sort(available.begin(), available.end(), [](const Book* a, const Book* b) {
+    return std::forward_as_tuple(a->getTitle(), a->getAuthor()) < 
+           std::forward_as_tuple(b->getTitle(), b->getAuthor());
+    });
+
     
     cout << "\n=== LIVRES DISPONIBLES ===\n";
     for (size_t i = 0; i < available.size(); ++i) {
@@ -212,6 +226,7 @@ void Library::displayAllUsers() {
         cout << "------------------------------\n";
     }
 }
+
 
 // Statistics
 int Library::getTotalBooks() const { return books.size(); }

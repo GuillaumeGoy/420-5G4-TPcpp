@@ -24,7 +24,8 @@ bibliotheque -d <chemin_vers_data>
 ## ⚠️ INFO
 * **Nom / Prénom :** Guillaume Goyette
 * **Fonctionnalité choisie (Interface) :** Détection des doublons plus intelligente
-* **Fonctionnalité choisie (Gestion des Données) :** ??
+* **Fonctionnalité choisie (Gestion des Données) :** Triage des reponse avec STD
+* **Ajout du journal de sauvegarde :** 
 
 ---
 

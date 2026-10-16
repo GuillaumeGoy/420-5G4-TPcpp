@@ -47,6 +47,8 @@ public:
     int getTotalBooks() const;
     int getAvailableBookCount() const;
     int getCheckedOutBookCount() const;
+
+    
 };
 
 #endif
